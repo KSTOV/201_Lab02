@@ -1,0 +1,24 @@
+h1 
+{
+    color: #87ACA3;
+    text-decoration: underline;
+    background-color:#175873;
+    text-align: center;
+    border-radius: 100px;
+}
+
+
+h3
+{
+    color: #87ACA3;
+    border: black 1px solid;
+    border-radius: 10px;
+    padding: 10px 10px 0px 10px;
+    margin-right: 1600px;
+    background-color: #175873;
+}
+
+body
+{
+    background-color: rgb(138, 138, 138);
+}
