@@ -1,9 +1,9 @@
 'use strict'
-// let userName = prompt("What is your name?")
-// alert("Welcome " + userName)
+let userName = prompt("What is your name?")
+alert("Welcome " + userName)
 
-// userQuestions();
-// guessNumber();
+userQuestions();
+guessNumber();
 guessQuestion();
 
 function userQuestions()
@@ -119,11 +119,10 @@ function guessQuestion()
             }
         }
         
-        if(!correct)
+        if(correct)
         {
-            numberOfAttempts--;
+            numberOfAttempts++;
             alert('Sorry try again!');
-            break; 
         }
     }
 }
