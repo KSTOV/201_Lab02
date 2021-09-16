@@ -1,9 +1,9 @@
 'use strict'
-let userName = prompt("What is your name?")
-alert("Welcome " + userName)
+// let userName = prompt("What is your name?")
+// alert("Welcome " + userName)
 
-userQuestions();
-guessNumber();
+// userQuestions();
+// guessNumber();
 guessQuestion();
 
 function userQuestions()
@@ -22,7 +22,7 @@ function userQuestions()
     let guessAge = prompt('Am I 25 years old?');           
     if (guessAge.toLowerCase() == 'yes')
     {
-        alert("Correct!" )
+        alert("Correct!")
     }
     else if (guessAge.toLowerCase() == 'no')
     {
@@ -33,7 +33,7 @@ function userQuestions()
     let guessSchool = prompt('Do I have a High School Diploma?');           
     if (guessSchool.toLowerCase() == 'yes')
     {
-        alert("Correct!" )
+        alert("Correct!")
     }
     else if (guessSchool.toLowerCase() == 'no')
     {
@@ -66,18 +66,18 @@ function userQuestions()
 
 function guessNumber()
 {
-    let userGuess = prompt('Do you want to guess my favorite number? (yes or no)');
+    let userGuess = prompt('Do you want to guess a number? (yes or no)');
     while (userGuess.toLowerCase() == 'yes')
     {
-        let correctAnswer = 8;
+        let correctAnswer = 60;
         let numberOfAttempts = 4;
         for(let i = 1; i <= numberOfAttempts; i++)
         {
-            let userAnswer = prompt("Guess a number between 1 and 10");
+            let userAnswer = prompt("Guess a number between 1 and 100");
 
-            while((userAnswer < 1) || (userAnswer > 10))
+            while((userAnswer < 1) || (userAnswer > 100))
             {
-                userAnswer = prompt("Guess a number between 1 and 10");
+                userAnswer = prompt("Guess a number between 1 and 100");
             }
             if(numberOfAttempts == i)
             {
@@ -103,74 +103,28 @@ function guessNumber()
 
 function guessQuestion()
 {
-    let userGuess = prompt('Would you like to guess 1 of my Top 10 things that I like? (yes or no)');
-    while (userGuess.toLowerCase() == 'yes')
+    let numberOfAttempts = 0;
+    let correct = true;
+    while (numberOfAttempts < 6 && correct)
     {
-        let topTen = ['My Wife', 'Video Games', 'Producing Music', 'Computers', 'Coding', '3D Modeling', 'Unreal Engine', 'Learning', 'TV Shows', 'Movies'];
-        let numberOfAttempts = 6;
-        for(let i = 1; i <= numberOfAttempts; i++)
+        let userAnswer = prompt("Try guessing 10 things that I like?");
+        let topTen = ['my wife', 'video games', 'producing music', 'computers', 'coding', '3d modeling', 'unreal engine', 'learning', 'tv shows', 'movies'];
+        for (let i = 0; i < topTen.length; i++)
         {
-            let userAnswer = prompt("Guess 1 of my Top 10 things that I like?");
-            if(numberOfAttempts == i)
+            if(userAnswer.toLowerCase() == topTen[i])
             {
-                alert('No more attempts left the correct answers are ' + topTen);
-            }
-            else if(userAnswer == topTen[0])
-            {
-                alert('You got it right. You had ' + (numberOfAttempts - i) + ' attempts left');
+                alert('You got it right.');
+                correct = false;
                 break;
-            }
-            else if(userAnswer == topTen[1])
-            {
-                alert('You got it right. You had ' + (numberOfAttempts - i) + ' attempts left');
-                break;
-            } 
-            else if(userAnswer == topTen[2])
-            {
-                alert('You got it right. You had ' + (numberOfAttempts - i) + ' attempts left');
-                break;
-            } 
-            else if(userAnswer == topTen[3])
-            {
-                alert('You got it right. You had ' + (numberOfAttempts - i) + ' attempts left');
-                break;
-            } 
-            else if(userAnswer == topTen[4])
-            {
-                alert('You got it right. You had ' + (numberOfAttempts - i) + ' attempts left');
-                break;
-            }
-            else if(userAnswer == topTen[5])
-            {
-                alert('You got it right. You had ' + (numberOfAttempts - i) + ' attempts left');
-                break;
-            } 
-            else if(userAnswer == topTen[6])
-            {
-                alert('You got it right. You had ' + (numberOfAttempts - i) + ' attempts left');
-                break;
-            }
-            else if(userAnswer == topTen[7])
-            {
-                alert('You got it right. You had ' + (numberOfAttempts - i) + ' attempts left');
-                break;
-            }
-            else if(userAnswer == topTen[8])
-            {
-                alert('You got it right. You had ' + (numberOfAttempts - i) + ' attempts left');
-                break;
-            }
-            else if(userAnswer == topTen[9])
-            {
-                alert('You got it right. You had ' + (numberOfAttempts - i) + ' attempts left');
-                break;
-            }      
-            else if(userAnswer != topTen)
-            {
-                alert('Sorry try Again! You have ' + (numberOfAttempts - i) + ' attempts left');  
             }
         }
-        break;
+        
+        if(!correct)
+        {
+            numberOfAttempts--;
+            alert('Sorry try again!');
+            break; 
+        }
     }
 }
 
