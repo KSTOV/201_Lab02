@@ -2,6 +2,7 @@
 let userName = prompt("What is your name?")
 alert("Welcome " + userName)
 
+let userScore = 0;
 userQuestions();
 guessNumber();
 guessQuestion();
@@ -16,6 +17,7 @@ function userQuestions()
     else if (guessName.toLowerCase() == 'no')
     {
         alert("Correct!")
+        userScore++;
     }
     // console.log(guessName)
 
@@ -23,6 +25,7 @@ function userQuestions()
     if (guessAge.toLowerCase() == 'yes')
     {
         alert("Correct!")
+        userScore++;
     }
     else if (guessAge.toLowerCase() == 'no')
     {
@@ -34,6 +37,7 @@ function userQuestions()
     if (guessSchool.toLowerCase() == 'yes')
     {
         alert("Correct!")
+        userScore++;
     }
     else if (guessSchool.toLowerCase() == 'no')
     {
@@ -49,6 +53,7 @@ function userQuestions()
     else if (guessMil.toLowerCase() == 'no')
     {
         alert('Correct it was the Navy!')
+        userScore++;
     }
     // console.log(guessMil)
     
@@ -56,6 +61,7 @@ function userQuestions()
     if (guessCode.toLowerCase() == 'yes')
     {
         alert("Correct!")
+        userScore++;
     }
     else if (guessCode.toLowerCase() == 'no')
     {
@@ -97,6 +103,7 @@ function guessNumber()
                 alert('Your answer is too high.  Try Again! You have ' + (numberOfAttempts - i) + ' attempts left');
             }
         }
+        userScore++;
         break;
     }
 }
@@ -115,6 +122,7 @@ function guessQuestion()
             {
                 alert('You got it right.');
                 correct = false;
+                userScore++;
                 break;
             }
         }
@@ -127,4 +135,4 @@ function guessQuestion()
     }
 }
 
-alert("Welcome to my website " + userName)
+alert("Welcome to my website " + userName + "       Score: " + userScore);
